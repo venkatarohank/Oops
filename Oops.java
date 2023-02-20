@@ -8,12 +8,12 @@ class Sports{
     
 }
 
-interface  Method // abstraction
+interface  Score // abstraction
 {
-     void abmethod();
+     void score();
 }
 
-class Cricket extends Sports implements Method  //inheritance 
+class Cricket extends Sports implements Score  //inheritance 
 {
       //Encapsulation
         private String name;
@@ -30,15 +30,16 @@ class Cricket extends Sports implements Method  //inheritance
         {
             System.out.println("Cricket"); // method Override (polymorphism)
         }
-        void fun()
+        public void score()
         {
-            System.out.println("111");
+            System.out.println("score");
         }
-        public void abmethod()
+        
+        public void score(int sc) //method Overloading (polymorphism)     
         {
-            System.out.println("abstract method body");
+            System.out.println("score = "+sc);
         }
-    
+        
 }
 
 
@@ -47,10 +48,11 @@ public class Main extends Sports
 	public static void main(String[] args) {
 	    
 	    Cricket c=new Cricket();
-	    c.setName("Crickets");  
+	    c.setName("player");  
 	    System.out.println(c.getName());
 		c.subtype();
-	    c.fun();
-	    c.abmethod();
+	    c.score();
+	    c.score(5);
+	    
 	}
 }
